@@ -1,1 +1,20 @@
-<p>question-library works!</p>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-primary my-2" [routerLink]="['/teacher/question/new-question']"><i class="fa-solid fa-plus"></i> Add new question</button>
+</div>
+<div *ngIf="questions.length == 0">
+    <h2>No Question Found!</h2>
+</div>
+<div *ngIf="questions.length > 0">
+    <h2>Question Bank</h2>
+    <ng-container *ngFor="let question of questions">
+        <div class="m-3 p-3 rounded bg-primary bg-opacity-10">
+            <div class="row mb-2">
+                <div class="col-6">Langauge: {{question.language}}</div>
+                <div class="col-6">Marks: {{question.marks}}</div>
+            </div>
+            <div class="mb-2">
+                {{question.questionText}}
+            </div>
+        </div>
+    </ng-container>
+</div>

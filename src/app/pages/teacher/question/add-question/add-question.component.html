@@ -1,0 +1,53 @@
+<h2>Add new question</h2>
+<div class="container mt-3">
+    <form [formGroup]="questionForm" (ngSubmit)="saveQuestion()">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="language">Langauge:</label>
+                <input type="text" class="form-control" formControlName="language" aria-label="language">
+            </div>
+            <div class="col">
+                <label for="marks">Marks:</label>
+                <input type="number" class="form-control" formControlName="marks" aria-label="marks">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">Text:</label>
+            <textarea class="form-control" formControlName="questionText" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="sourceCode" class="form-label">Source Code:</label>
+            <div style="height: 50vh;">
+                <ngx-monaco-editor style="height: 100%;" [options]="editorOptions"
+                    formControlName="sourceCode"></ngx-monaco-editor>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="template" class="form-label">Template:</label>
+            <div style="height: 50vh;">
+                <ngx-monaco-editor style="height: 100%;" [options]="editorOptions"
+                    formControlName="template"></ngx-monaco-editor>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <h4>Test Cases: </h4>
+                <button type="button" class="btn btn-primary" (click)="addTestCase()"><i class="fa-solid fa-plus"></i> Add test case</button>
+            </div>
+            <ng-container formArrayName="testCases" *ngFor="let testCase of testCases.controls; let i = index">
+                <h5>Testcase: {{i + 1}}</h5>
+                <div class="row" [formGroupName]="i">
+                    <div class="col">
+                        <label for="input">Input</label>
+                        <input type="text" class="form-control" formControlName="input" aria-label="input">
+                    </div>
+                    <div class="col">
+                        <label for="output">Expected Output</label>
+                        <input type="text" class="form-control" formControlName="expectedOutput" aria-label="output">
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i> Save Question</button>
+    </form>
+</div>

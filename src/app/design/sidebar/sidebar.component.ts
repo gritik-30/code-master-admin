@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit{
   routes: any[] = [
     { title: `Dashboard`, icon: '<i class="fa-solid fa-house"></i>', path: 'teacher/dashboard' },
     { title: `Tests`, icon: '<i class="fa-solid fa-flask"></i>', path: 'teacher/test' },
-    // { title: `Questions`, icon: '<i class="fa-solid fa-question"></i>', path: 'teacher/question/library' },
+    { title: `Questions`, icon: '<i class="fa-solid fa-question"></i>', path: 'teacher/question' },
     // { title: `Reports`, icon: '<i class="fa-solid fa-chart-line"></i>', path: '' },
     // { title: `Profile`, icon: '<i class="fa-regular fa-user"></i>', path: '' },
   ];
