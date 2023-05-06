@@ -26,6 +26,5 @@ export class QuestionLibraryComponent implements OnInit {
         console.error(err);
       }
     })
-
   }
 }

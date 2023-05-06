@@ -20,7 +20,7 @@ export class AllTestsComponent implements OnInit{
   }
 
   getAllTests(): void {
-    this.api.fetch('test/').subscribe({
+    this.api.fetch('test').subscribe({
       next: (response) => {
         this.tests = response;
       }

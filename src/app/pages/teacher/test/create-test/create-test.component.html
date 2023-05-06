@@ -1,0 +1,43 @@
+<h2 class="mb-3">New Test</h2>
+<form [formGroup]="testForm" (ngSubmit)="saveTest()">
+    <h4>Enter test details:</h4>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea class="form-control" formControlName="description" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="instructions" class="form-label">Instructions:</label>
+        <textarea class="form-control" formControlName="instructions" rows="3"></textarea>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="totalMarks" class="form-label">Total Marks:</label>
+            <input type="number" readonly class="form-control" formControlName="totalMarks" aria-label="totalMarks">
+        </div>
+        <div class="col">
+            <label for="passingMarks" class="form-label">Passing Marks:</label>
+            <input type="number" class="form-control" formControlName="passingMarks" aria-label="passingMarks">
+        </div>
+    </div>
+    
+    <h4>Select questions:</h4>
+    <ng-container *ngFor="let question of questions">
+        <div class="d-flex">
+            <input type="checkbox" (change)="selectQuestion($event, question)">
+            <div class="m-3 p-3 rounded bg-primary bg-opacity-10 flex-grow-1">
+                <div class="row mb-2">
+                    <div class="col-6">Langauge: {{question.language}}</div>
+                    <div class="col-6">Marks: {{question.marks}}</div>
+                </div>
+                <div class="mb-2">
+                    {{question.questionText}}
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <button type="submit" class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i> Save Test</button>
+</form>

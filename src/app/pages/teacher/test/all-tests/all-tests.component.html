@@ -2,7 +2,7 @@
     <h2>No Test Found!</h2>
 </div>
 <div class="d-flex justify-content-end">
-    <button class="btn btn-primary my-2"><i class="fa-solid fa-plus"></i> Create new test</button>
+    <button class="btn btn-primary my-2" [routerLink]="['/teacher/test/new-test']"><i class="fa-solid fa-plus"></i> Create new test</button>
 </div>
 <div *ngIf="tests?.length > 0">
     <h2>All Tests</h2>
