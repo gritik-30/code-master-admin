@@ -1,0 +1,36 @@
+aside {
+    height: 100%;
+    background-color: #225D81;
+
+    .brand {
+        height: 4rem;
+        padding: 0.5rem;
+        color: #fcf4f4;
+        background-color: #153951;
+    }
+
+    ul {
+        list-style: none;
+        color: #fcf4f4;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0.5rem;
+    }
+    
+    .tab {
+        margin-bottom: 0.2rem;
+        padding: 0.5rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+
+        .icon {
+            display: inline-flex;
+            margin-right: 0.8rem;
+        }
+    }
+    
+    .tab:hover {
+        background-color: #194461;
+    }
+}

@@ -1,0 +1,16 @@
+main {
+    padding: 0.5rem 1rem;
+    padding-bottom: 3rem;
+}
+
+app-header {
+    position: sticky;
+    width: inherit;
+    top: 0;
+}
+
+app-footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}

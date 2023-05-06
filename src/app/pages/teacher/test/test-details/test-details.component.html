@@ -1,0 +1,29 @@
+<h2># {{testDetails.title}}</h2>
+<div class="details my-3 p-3 rounded border">
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">Description:</th>
+            <td>{{testDetails.description}}</td>
+        </tr>
+        <tr>
+            <th scope="row">No. of Questions:</th>
+            <td>{{testDetails.numberOfQuestions}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Total Marks:</th>
+            <td>{{testDetails.totalMarks}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Passing Marks:</th>
+            <td>{{testDetails.passingMarks}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="questions">
+    <div class="d-flex align-items-center justify-content-between">
+        <h4>Questions:</h4>
+        <button class="btn btn-primary"><i class="fa fa-plus"></i> Add Question</button>    
+    </div>
+</div>

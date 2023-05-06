@@ -1,0 +1,22 @@
+<div *ngIf="tests?.length == 0">
+    <h2>No Test Found!</h2>
+</div>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-primary my-2"><i class="fa-solid fa-plus"></i> Create new test</button>
+</div>
+<div *ngIf="tests?.length > 0">
+    <h2>All Tests</h2>
+    <ng-container>
+        <div class="test-row rounded bg-primary bg-opacity-10 p-3 my-2" style="cursor: pointer;" *ngFor="let test of tests" (click)="viewTestDetails(test._id)">
+            <h4>{{test.title}}</h4>
+            <!-- <p>{{test.description}}</p> -->
+            <div class="d-flex align-items-center justify-content-between">
+                <div>No of Questions: {{test.numberOfQuestions}}</div>
+                <div>
+                    <span>Total Marks: {{test.totalMarks}}</span>&nbsp;&nbsp;&nbsp;
+                    <span>Passing Marks: {{test.passingMarks}}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

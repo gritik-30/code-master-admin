@@ -1,0 +1,11 @@
+<aside>
+    <div class="brand">
+        <h1>CodeMaster</h1>
+    </div>
+    <ul>
+        <li *ngFor="let route of routes" class="tab" (click)="goTo(route.path)">
+            <span class="icon" [innerHtml]="route.icon"></span>
+            {{route.title}}
+        </li>
+    </ul>
+</aside>
