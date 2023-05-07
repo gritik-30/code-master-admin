@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center justify-content-between">
+    <h2>Students List</h2>
+    <button class="btn btn-primary my-2" [routerLink]="['/admin/add-student']"><i class="fa-solid fa-plus"></i> Add new student</button>
+</div>
+
+<div class="container">
+    <ng-container *ngFor="let student of students">
+        <div class="bg-primary bg-opacity-10 m-3 p-2 rounded">
+            <div class="mb-2">
+                {{student.name}}
+            </div>
+            <div class="d-flex justify-content-between">
+                <div>Email: {{student.email}}</div>
+                <div>Password: {{student.password}}</div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -20,6 +20,17 @@ const routes: Routes = [
       }
     ],
     canActivate: [SigninGuard]
+  },
+  {
+    path: 'admin',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('src/app/pages/admin/admin.module').then(m => m.AdminModule)
+      }
+    ],
+    canActivate: [SigninGuard]
   }
 ];
 

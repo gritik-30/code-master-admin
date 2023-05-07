@@ -1,1 +1,37 @@
 <h2>Welcome, {{teacher?.firstName}} {{teacher?.lastName}}!</h2>
+<div class="my-4 p-2 bg-primary bg-opacity-10 rounded">
+    <h4>Profile Info</h4>
+    <strong>First Name: </strong> {{teacher?.firstName}}<br>
+    <strong>Last Name: </strong> {{teacher?.lastName}}<br>
+    <strong>Email: </strong> {{teacher?.email}}<br>
+    <strong>Organization: </strong> {{teacher?.org.name}}<br>
+</div>
+<ng-container *ngIf="teacher?.isAdmin == true" && totalTeachers>
+    <div class="d-flex align-items-center justify-content-around">
+        <div class="card p-2 bg-primary bg-opacity-10 text-center">
+            <h3>Total Teachers</h3>
+            <h1>{{totalTeachers || 0}}</h1>
+            <button class="btn btn-primary" [routerLink]="['/admin/teachers']">Add New</button>
+        </div>
+        <div class="card p-2 bg-primary bg-opacity-10 text-center">
+            <h3>Total Students</h3>
+            <h1>{{totalStudents || 0}}</h1>
+            <button class="btn btn-primary" [routerLink]="['/admin/students']">Add New</button>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="teacher?.isAdmin != true && totalTests && totalQuestions">
+    <div class="d-flex align-items-center justify-content-around">
+        <div class="card p-2 bg-primary bg-opacity-10 text-center">
+            <h3>Total Tests</h3>
+            <h1>{{totalTests || 0}}</h1>
+            <button class="btn btn-primary" [routerLink]="['/teacher/test/new-test']">Add New</button>
+        </div>
+        <div class="card p-2 bg-primary bg-opacity-10 text-center">
+            <h3>Total Questions</h3>
+            <h1>{{totalQuestions || 0}}</h1>
+            <button class="btn btn-primary" [routerLink]="['/teacher/question/new-question']">Add New</button>
+        </div>
+    </div>
+</ng-container>
