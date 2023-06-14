@@ -1,0 +1,18 @@
+<div *ngIf="reports.length == 0">
+    <h2>No Question Found!</h2>
+</div>
+<div *ngIf="reports.length > 0">
+    <h2>Question Bank</h2>
+    <ng-container *ngFor="let report of reports">
+        <div class="m-3 p-3 rounded bg-primary bg-opacity-10">
+            <div class="row mb-2 fs-2">
+                <div class="col-6">Title: {{report.test.title}}</div>
+                <div class="col-6">Student: {{report.candidate.name}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-6">Status: {{report.status}}</div>
+                <div class="col-6">Score: {{report.score}}</div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -9,6 +9,7 @@ import { SidebarComponent } from './design/sidebar/sidebar.component';
 import { MainComponent } from './design/main/main.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiInterceptor } from './services/api.interceptor';
+import { ReportComponent } from './pages/report/report.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ApiInterceptor } from './services/api.interceptor';
     LayoutComponent,
     FooterComponent,
     SidebarComponent,
-    MainComponent
+    MainComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

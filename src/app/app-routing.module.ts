@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './design/layout/layout.component';
 import { SigninGuard } from './guards/signin.guard';
 import { SignoutGuard } from './guards/signout.guard';
+import { ReportComponent } from './pages/report/report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
-  { path: 'auth',
+  {
+    path: 'auth',
     loadChildren: () => import('src/app/pages/auth/auth.module').then(m => m.AuthModule),
     canActivate: [SignoutGuard]
   },
@@ -31,6 +33,13 @@ const routes: Routes = [
       }
     ],
     canActivate: [SigninGuard]
+  },
+  {
+    path: 'reports',
+    component: LayoutComponent,
+    children: [
+      { path: '', component: ReportComponent }
+    ]
   }
 ];
 
